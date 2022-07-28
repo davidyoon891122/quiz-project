@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { useSelector, useDispatch } from "react-redux"
+import { PinkButton } from "./components/PinkButton";
+import { next } from "./store/modules/score"
 
 function App() {
+  const page = useSelector(state => state.score.page)
+  const dispatch = useDispatch()
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      {page === 0 && (
+        <main>
+         <img />
+         <h1>나라별 수도 퀴즈</h1>
+         <h2>진정한 수도 고인물도 100점을 맞기 어렵습니다!</h2>
+         <PinkButton text="테스트 시작!" clickEvent={() => {
+          dispatch(next())
+         }} />
+        </main>
+      )}
+    </>
+  )
 }
 
 export default App;
