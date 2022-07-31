@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux"
 import { PinkButton } from "./components/PinkButton";
 import { next } from "./store/modules/score"
 import styled from "styled-components";
+import { Quiz } from "./components/Quiz";
 
 const Main = styled.main`
   width: 100%;
@@ -42,6 +43,11 @@ function App() {
          <PinkButton text="테스트 시작!" clickEvent={() => {
           dispatch(next())
          }} />
+        </Main>
+      )}
+      {page > 0 && (
+        <Main>
+          <Quiz></Quiz>
         </Main>
       )}
     </>
