@@ -34,6 +34,10 @@ const MyButton = styled.a`
         transform: translate3d(0px, 0.75em, -1em);
         transition: transform .15s ease-out, box-shadow .15s ease-out;
     }
+    &:hover {
+        background: #ffe9e9;
+        transform: translateY(0.25em);
+    }
 `
 
 export function PinkButton({ text, clickEvent }) {
