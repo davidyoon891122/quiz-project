@@ -31,7 +31,9 @@ const SubHeader = styled.h2`
 
 function App() {
   const page = useSelector(state => state.score.page)
+  const quiz = useSelector(state => state.score.quizs)
   const dispatch = useDispatch()
+
 
   return (
     <>
@@ -45,9 +47,14 @@ function App() {
          }} />
         </Main>
       )}
-      {page > 0 && (
+      {page > 0 && page <= quiz.length && (
         <Main>
           <Quiz></Quiz>
+        </Main>
+      )}
+      {page > quiz.length && (
+        <Main>
+          마지막 페이지
         </Main>
       )}
     </>
