@@ -2,8 +2,11 @@ import React from "react";
 import styled from "styled-components"
 
 const MyButton = styled.a`
+    display: block;
+    margin-bottom: 29px;
+    padding: 1.8em;
+    background: #fefefe;
     position: relative;
-    display: inline-block;
     cursor: pointer;
     vertical-align: middle;
     text-decoration: none;
@@ -12,9 +15,7 @@ const MyButton = styled.a`
     font-family: inherit;
     font-weight: 600;
     color: #382b22;
-    padding: 1.25em 2em;
-    background: #fff0f0;
-    border: 2px solid #b18597;
+    border: 2px solid #8599b1;
     border-radius: 0.75em;
     user-select: none;
     transition: transform .15s ease-out, background .15s ease-out;
@@ -28,14 +29,13 @@ const MyButton = styled.a`
         left: 0;
         bottom: 0;
         right: 0;
-        background: #f9c4d2;
+        background: #c4d8f9;
         border-radius: inherit;
-        box-shadow: 0 0 0 2px #b18597, 0 0.625em 0 0 #ffe3e2;
+        box-shadow: 0 0 0 2px #8599b1, 0 0.625em 0 0 #e2efff;
         transform: translate3d(0px, 0.75em, -1em);
         transition: transform .15s ease-out, box-shadow .15s ease-out;
     }
     &:hover {
-        background: #ffe9e9;
         transform: translateY(0.25em);
     }
 `
