@@ -4,9 +4,29 @@ import { PinkButton } from "./components/PinkButton";
 import { next } from "./store/modules/score"
 import styled from "styled-components";
 
-const Header = styled.h1`
-
+const Main = styled.main`
+  width: 100%;
+  max-width: 360px;
+  margin: auto;
+  text-align: center;
 `
+const MainImg = styled.img`
+  width: inherit;
+  margin-bottom: 30px;
+`
+
+const Header = styled.h1`
+   margin-bottom: 30px;
+   margin-top: 0;
+`
+
+const SubHeader = styled.h2`
+  font-size: 1.1em;
+  color: #8a8e90;
+  font-weight: 400;
+  margin-bottom: 30px;
+`
+
 
 function App() {
   const page = useSelector(state => state.score.page)
@@ -15,14 +35,14 @@ function App() {
   return (
     <>
       {page === 0 && (
-        <main>
-         <img />
+        <Main>
+         <MainImg src="/city/main.jpg" alt="뉴욕 풍경" />
          <Header>나라별 수도 퀴즈</Header>
-         <h2>진정한 수도 고인물도 100점을 맞기 어렵습니다!</h2>
+         <SubHeader>진정한 수도 고인물도 100점을 맞기 어렵습니다!</SubHeader>
          <PinkButton text="테스트 시작!" clickEvent={() => {
           dispatch(next())
          }} />
-        </main>
+        </Main>
       )}
     </>
   )
