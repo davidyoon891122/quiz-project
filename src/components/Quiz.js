@@ -3,6 +3,12 @@ import { useSelector, useDispatch } from "react-redux"
 import { BlueButton } from "./BlueButton";
 import { Progress } from "./Progress";
 import { check, next } from "../store/modules/score";
+import styled from "styled-components";
+
+const Img = styled.img`
+    width: inherit;
+    margin-bottom: 50px;
+`
 
 export function Quiz() {
     const dispatch = useDispatch()
@@ -12,6 +18,7 @@ export function Quiz() {
     return (
         <>
             <h1 style={{margin: "50px 0"}}>{quiz[page - 1].q}</h1>
+            {quiz[page-1].img && <Img src={quiz[page - 1].img} />}
             {quiz[page - 1].a.map(item => {
                 return <BlueButton 
                 text={item.text}

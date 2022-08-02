@@ -36,6 +36,7 @@ const initialState = {
     page: 0, // 0: 인트로 페이지, 1 ~ quiz.length: 퀴즈 페이지, quiz.length + 1: 마지막 페이지
     quizs: [{
         q: "대한민국의 수도는?",
+        img: "/city/korea.jpg",
         a: [{
             text: "서울",
             isCorrect: true,
@@ -52,6 +53,7 @@ const initialState = {
     },
     {
         q: "미국 수도는?",
+        img: "/city/us.jpg",
         a: [{
             text: "샌프란시스코",
             isCorrect: false,
